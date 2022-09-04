@@ -1,15 +1,21 @@
 module.exports = {
-    "env": {
-        "commonjs": true,
-        "es2021": true
+    env: {
+      commonjs: true,
+      es2021: true,
+      node: true,
     },
-    "extends": "eslint:recommended",
-    "overrides": [
+    extends: [
+      'airbnb-base',
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest"
+    parserOptions: {
+      ecmaVersion: 12,
     },
-    "rules": {
-       'https://eslint.org/docs/rules/no-undef': false,
-    }
-}
+    rules: {
+      'class-methods-use-this': 'off',
+      'consistent-return': 'off',
+      camelcase: 'off',
+      'no-unused-vars': ['error', {
+        argsIgnorePatter: 'next',
+      }],
+    },
+  };
